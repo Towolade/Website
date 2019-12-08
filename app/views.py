@@ -1,12 +1,11 @@
 from flask import Flask
+from app import app
 from flask import render_template
 from flask_login import LoginManager
 
-app = Flask(__name__)
-
 
 @app.route('/')
-#@login_required
+# @login_required
 def homePage():
     return render_template('home.html')
 
@@ -32,5 +31,4 @@ def userProfile():
 def getTickets():
     return render_template('tickets.html')
 
-if __name__ == '__main__':
-    app.run()
+

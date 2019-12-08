@@ -1,4 +1,5 @@
 from flask import Flask
+from .forms import signUpForm, loginForm
 from app import app
 from flask import render_template
 from flask_login import LoginManager
@@ -10,16 +11,18 @@ def homePage():
     return render_template('home.html')
 
 # todo Finish Login Method
-@app.route('/login')
+@app.route('/login', methods=['GET', 'POST'])
 def login():
-    return render_template('login.html')
+    form = loginForm()
+    return render_template('login.html', form = form)
 
 # todo Finish Register method
-@app.route('/register')
+@app.route('/register', methods=['GET', 'POST'])
 def register():
+    form = signUpForm()
     return render_template('register.html')
 
-@app.route('/create%events')
+@app.route('/create%events', methods=['GET', 'POST'])
 def createEvents():
     return render_template('createEvents.html')
 

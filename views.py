@@ -20,5 +20,17 @@ def login():
 def register():
     return render_template('register.html')
 
+@app.route('/create%events')
+def createEvents():
+    return render_template('createEvents.html')
+
+@app.route('/profile')
+def userProfile():
+    return render_template('userInfo.html')
+
+@app.route('/get%tickets')
+def getTickets():
+    return render_template('tickets.html')
+
 if __name__ == '__main__':
     app.run()
